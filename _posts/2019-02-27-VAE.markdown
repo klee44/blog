@@ -124,7 +124,7 @@ The recognition model and the generative model can be considered as a __stochast
 The second term in ELBO, \\(D_{\text{KL}}\left(q_{\phi}(z \mid x^{(i)} \vert\vert p_{\theta}(z)\right)\\), acts as __a regulerizer__, which measures the distance of the approximate posterior \\(q_{\phi}(z \mid x^{(i)})\\) from the prior \\(p_{\theta}(z)\\).
 
 
-{% if page.comments %}
+
 <div id="disqus_thread"></div>
 <script>
 
@@ -145,5 +145,4 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
 
