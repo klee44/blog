@@ -2,6 +2,7 @@
 layout: post
 title:  "VAE - variational autoencoder"
 date:   2019-02-27 23:19:00 -0800
+comments: true
 categories: study  
 ---
 
