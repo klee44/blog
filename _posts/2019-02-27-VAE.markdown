@@ -106,9 +106,9 @@ The decomposition of the marginal likelihood can be verified as
 $$
 \begin{align*}
 \log p_{\theta}(x) &= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[ \log p_{\theta}(x) \right]\\
-&= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[ \log \color{red}{p_{\theta}(x)} \frac{ \color{blue}{p_\theta(z)}}{ \color{green}{p_\theta(z)}} \frac{ \color{green}{p_{\theta}(x^{(i)},z)}}{ \color{red}{p_{\theta}(x^{(i)},z)}} \right]\\
-&= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[ \log \frac{ \color{blue}{p_{\theta}(z)}}{ \color{red}{p_{\theta}(z\mid x^{(i)})}} +  \log \color{green}{p_{\theta} (x^{(i)}|z)} \right]\\
-&= -D_{\text{KL}} \left(p_{\theta}(z|x^{(i)}) || p_{\theta}(z) \right)  + \mathbb E_{q_{\phi}(z | x^{(i)})} \left[\log p_{\theta} (x^{(i)}|z) \right].
+&= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[ \log \color{red}{p_{\theta}(x)} \frac{ \color{blue}{p_\theta(z)}}{ \color{green}{p_\theta(z)}} \frac{ \color{green}{p_{\theta}(x^{(i)},z)}}{ \color{red}{p_{\theta}(x^{(i)},z)}} \frac{q_{\phi}(z \mid x)}{q_{\phi}(z \mid x)} \right]\\
+&= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[ \log \color{green}{p_{\theta} (x^{(i)}|z)} + \log \frac{ \color{blue}{p_{\theta}(z)}}{q_{\phi}(z \mid x)}  + \log \frac{q_{\phi}(z \mid x)}{ \color{red}{p_{\theta} (z\mid x^{(i)})}}  \right]\\
+&= \mathbb E_{q_{\phi}(z | x^{(i)})} \left[\log p_{\theta} (x^{(i)}|z) \right] -D_{\text{KL}} \left(q_{\phi}(z \mid x) || p_{\theta}(z) \right) + D_{\text{kL}} \left(q_{\phi} (z \mid x^{(i)}) || p_{\theta} (z\mid x^{(i)}) \right)
 \end{align*}
 $$
 
@@ -124,7 +124,7 @@ The recognition model and the generative model can be considered as a __stochast
 The second term in ELBO, \\(D_{\text{KL}}\left(q_{\phi}(z \mid x^{(i)} \vert\vert p_{\theta}(z)\right)\\), acts as __a regulerizer__, which measures the distance of the approximate posterior \\(q_{\phi}(z \mid x^{(i)})\\) from the prior \\(p_{\theta}(z)\\).
 
 
-
+{% if page.comments %}
 <div id="disqus_thread"></div>
 <script>
 
@@ -145,4 +145,5 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
 
