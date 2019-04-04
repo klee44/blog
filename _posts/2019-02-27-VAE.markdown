@@ -6,6 +6,7 @@ comments: true
 categories: study  
 ---
 
+In this post, I briefly introduce Variational Autoencoder (VAE). In the sequel, I am going to review details/improvements/variants of VAE.
 
 * [Preliminaries](#prelim)
 * [Variational autoencoder](#VAE)
@@ -13,6 +14,7 @@ categories: study
 	* [Maximum likelihood (ML) estimation and intractability](#MLestimation)
 	* [The variational bound](#ELBO)
 	* [Connections with autoencoder](#AE)
+* [References](#ref)
 
 ## <a name="prelim"></a>  Preliminaries
 Expection:
@@ -123,6 +125,9 @@ The recognition model and the generative model can be considered as a __stochast
 
 The second term in ELBO, \\(D_{\text{KL}}\left(q_{\phi}(z \mid x^{(i)} \vert\vert p_{\theta}(z)\right)\\), acts as __a regulerizer__, which measures the distance of the approximate posterior \\(q_{\phi}(z \mid x^{(i)})\\) from the prior \\(p_{\theta}(z)\\).
 
+
+## <a name="ref"></a>  References
+[1] Diederik P. Kingma, and Max Welling. ["Auto-encoding variational bayes.”](https://arxiv.org/abs/1312.6114) ICLR 2014.
 
 {% if page.comments %}
 <div id="disqus_thread"></div>
