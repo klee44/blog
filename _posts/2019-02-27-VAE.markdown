@@ -129,6 +129,7 @@ The second term in ELBO, \\(D_{\text{KL}}\left(q_{\phi}(z \mid x^{(i)} \vert\ver
 ## <a name="ref"></a>  References
 [1] Diederik P. Kingma, and Max Welling. ["Auto-encoding variational bayes.”](https://arxiv.org/abs/1312.6114) ICLR 2014.
 
+[2] Danilo J. Rezende, Shakir Mohamed, Daan Wierstra. ["Stochastic Backpropagation and Approximate Inference in Deep Generative Models."](https://arxiv.org/abs/1401.4082) ICML 2014.
 {% if page.comments %}
 <div id="disqus_thread"></div>
 <script>
